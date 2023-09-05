@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package protocom.response;
+
+message Response
+{
+    oneof response_type {
+        Status status = 1;
+        ServerInfo server_info = 2;
+        FileHeader file_header = 3;
+        File file = 4;
+    }
+}
+
+message Status
+{
+    bool status = 1;
+}
+
+message ServerInfo
+{
+    string ip = 1;
+    string port = 2;
+}
+
+message FileHeader
+{
+    string name = 1;
+    uint64 size = 2;
+    bool status = 3;
+}
+
+message File
+{
+    bytes file = 1;
+}

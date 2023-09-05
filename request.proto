@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package protocom.request;
+
+message LedControl
+{
+    bool enable = 1;
+}
+
+message Info{}
+
+message BtnInterrupt
+{
+    uint32 timeout_us = 1;
+}
+
+message File
+{
+    string file_name = 1;
+}
+
+message Request
+{
+    oneof request_type {
+        LedControl ledctrl = 1;
+        Info info = 2;
+        BtnInterrupt btnint = 3;
+        File file = 4;
+    }
+}
+
