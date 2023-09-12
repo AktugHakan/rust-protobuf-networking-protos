@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 
 package protocom.response;
 
@@ -14,23 +14,23 @@ message Response
 
 message Status
 {
-    bool status = 1;
+    optional bool status = 1;
 }
 
 message ServerInfo
 {
-    string ip = 1;
-    string port = 2;
+    optional string ip = 1;
+    optional string port = 2;
 }
 
 message FileHeader
 {
-    string name = 1;
-    uint64 size = 2;
-    bool status = 3;
+    optional string name = 1;
+    optional uint64 size = 2;
+    optional bool status = 3;
 }
 
 message File
 {
-    bytes file = 1;
+    optional bytes file = 1;
 }
