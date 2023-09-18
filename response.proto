@@ -28,9 +28,11 @@ message FileHeader
     optional string name = 1;
     optional uint64 size = 2;
     optional bool status = 3;
+    optional uint64 segment_count = 4;
 }
 
 message File
 {
     optional bytes file = 1;
+    optional uint64 segment_no = 2;
 }

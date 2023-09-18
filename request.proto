@@ -24,6 +24,11 @@ message FileAccept
     optional bool accept = 1;
 }
 
+message FileAck
+{
+    optional uint64 next = 1;
+}
+
 message Request
 {
     oneof request_type {
@@ -32,6 +37,7 @@ message Request
         BtnInterrupt btnint = 3;
         File file = 4;
         FileAccept file_accept = 5;
+        FileAck file_ack = 6;
     }
 }
 
