@@ -9,6 +9,7 @@ message Response
         ServerInfo server_info = 2;
         FileHeader file_header = 3;
         File file = 4;
+        FileHash file_hash = 5;
     }
 }
 
@@ -35,4 +36,9 @@ message File
 {
     optional bytes file = 1;
     optional uint64 segment_no = 2;
+}
+
+message FileHash
+{
+    optional bytes digest = 1;
 }
